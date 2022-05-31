@@ -1,0 +1,45 @@
+Teste
+
+No processo de seleção para programadores no Nimitz temos uma etapa que é a avaliação técnica criada pela nossa equipe de desenvolvedores com o objetivo de saber em que nível você se encontra e então realizarmos uma oferta justa, caso seja selecionado.
+
+Segue abaixo a avaliação técnica por favor nos envie em até 7 dias. Assim que finalizar compartilhe o git na resposta desta pergunta para que possamos avaliar e dar um retorno.
+
+Desenvolver aplicação utilizando Spring Boot e OpenJDK 14.
+
+1- Utilizando a biblioteca https://jsoup.org/, você deve ser capaz de ler e armazenar em um banco de dados de sua escolha os status dos serviços de nota fiscal eletrônica por estado, acessando a página http://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx.
+
+2- Desenvolva um job que seja executado a cada 5 minutos para armazenar um histórico de status dos serviços.
+
+3- Retornar por rest os status atual dos serviços por estado.
+
+4- Retornar por rest o status atual do serviço filtrando por estado.
+
+5- Retornar por rest os status dos serviços por estado filtrando por data.
+
+6- Retornar por rest qual estado teve mais indisponibilidade de serviço.
+
+
+
+Desenvolver uma aplicação em Angular 10.
+
+1- Configure e utilize os componentes do https://www.primefaces.org/primeng/.
+
+2- Desenvolva um dashboard consumindo todos endpoint rest que foram criados no backend.
+
+3 - Customizar o css de pelo menos 3 componentes do primeng, sendo:
+
+- Uma alteração que seja exibida em todos os lugares que utilizarem o componente customizado.
+
+- Duas alterações que tenham efeito em apenas um lugar que utilizar o componente customizado.
+
+4- Utilize sass.
+
+5- Crie e utilize ao menos um pipe.
+Caso tenha dúvida, entre em contato conosco.
+
+<dependency>
+  <!-- jsoup HTML parser library @ https://jsoup.org/ -->
+  <groupId>org.jsoup</groupId>
+  <artifactId>jsoup</artifactId>
+  <version>1.15.1</version>
+</dependency>
