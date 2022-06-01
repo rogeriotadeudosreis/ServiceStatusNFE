@@ -1,5 +1,6 @@
 package com.rogerioreis.controller;
 
+import com.rogerioreis.dto.ServiceStatusDto;
 import com.rogerioreis.model.ServiceStatus;
 import com.rogerioreis.service.ServiceStatusService;
 import lombok.RequiredArgsConstructor;
@@ -27,10 +28,15 @@ public class ServiceStatusController {
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<ServiceStatus> salvar(@RequestBody @Valid ServiceStatus serviceStatus, UriComponentsBuilder uriBuilder) {
-        ServiceStatus serviceStatusSalvo = service.salvar(serviceStatus);
-//        UserDto dto = mapper.map(serviceStatusSalvo, serviceStatusDto.class);
-        URI uri = uriBuilder.path("/api/service-status/{id}").buildAndExpand(serviceStatusSalvo.getId()).toUri();
-        return ResponseEntity.created(uri).body(serviceStatusSalvo);
+    public ResponseEntity<ServiceStatusDto> salvar(@RequestBody @Valid ServiceStatusDto dto, UriComponentsBuilder uriBuilder) {
+
+        ServiceStatus entity = new ServiceStatus();
+//        entity.setId(1L);
+        entity.setAuthorizing(dto.getAuthorizing());
+        entity.setStatusServico(dto.getStatusServico());
+
+        service.salvar(entity);
+        URI uri = uriBuilder.path("/api/service-status/{id}").buildAndExpand(entity.getId()).toUri();
+        return ResponseEntity.created(uri).body(new ServiceStatusDto(entity));
     }
 }
