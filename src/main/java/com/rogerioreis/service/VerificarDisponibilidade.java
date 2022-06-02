@@ -37,9 +37,9 @@ public class VerificarDisponibilidade {
     @Scheduled(fixedDelay = MINUTO)
     public void verificarAcada5Minutos() throws IOException {
 
-        String url = "https://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx?versao=0.00&tipoConteudo=P2c98tUpxrI=";
-        System.out.println("Conectando na url: " + url);
-        document = coletarDados(url);
+        final String URL = "https://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx?versao=0.00&tipoConteudo=P2c98tUpxrI=";
+        System.out.println("Conectando na url: " + URL);
+        document = coletarDados(URL);
         tratandoDados();
         System.out.println("Verificando disponibilidade de serviços da NFE a cada 05 (cinco) minutos...");
     }

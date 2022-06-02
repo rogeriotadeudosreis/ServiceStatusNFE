@@ -43,19 +43,11 @@ public class ServiceStatus {
     @Column(name = "DATA_CONSULTA")
     private LocalDateTime consultationDate;
 
-    @Column(name = "DATA_CONSULTA_ATUALIZADA")
-    private LocalDateTime updateConsultationDate;
-
     @Column(name = "INDISPONIVEL")
     private Long unavailable;
 
     @PrePersist
     public void onSave() {
         this.consultationDate = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    public void onUpdate() {
-        this.updateConsultationDate = LocalDateTime.now();
     }
 }

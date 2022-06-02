@@ -25,14 +25,12 @@ public class ServiceStatusDto {
         this.authorizing = entity.getAuthorizing();
         this.statusServico = entity.getStatusServico();
         this.consultationDate = entity.getConsultationDate();
-        this.updateConsultationDate = entity.getUpdateConsultationDate();
         this.unavailable = entity.getUnavailable();
     }
 
     private String authorizing;
     private String statusServico;
     private LocalDateTime consultationDate;
-    private LocalDateTime updateConsultationDate;
     private Long unavailable;
 
 }
