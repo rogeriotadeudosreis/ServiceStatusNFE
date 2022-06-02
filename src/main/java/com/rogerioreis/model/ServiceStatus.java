@@ -44,7 +44,7 @@ public class ServiceStatus {
     private LocalDateTime consultationDate;
 
     @Column(name = "INDISPONIVEL")
-    private Long unavailable;
+    private String unavailable;
 
     @PrePersist
     public void onSave() {

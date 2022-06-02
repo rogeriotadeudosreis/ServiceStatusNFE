@@ -18,11 +18,11 @@ public class ServiceStatusService {
 
     public ServiceStatus salvar(ServiceStatus status) {
         if (!status.getStatusServico().contains("verde"))
-            status.setUnavailable(1L);
+            status.setUnavailable("Indisponivel");
         return repository.save(status);
     }
 
-    public Page<ServiceStatus> listar(Pageable pageable) {
+    public Page<ServiceStatus> consultar(Pageable pageable) {
         Page<ServiceStatus> lista = repository.findAll(pageable);
         if (lista.isEmpty()){
             return null;

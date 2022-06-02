@@ -31,6 +31,6 @@ public class ServiceStatusDto {
     private String authorizing;
     private String statusServico;
     private LocalDateTime consultationDate;
-    private Long unavailable;
+    private String unavailable;
 
 }

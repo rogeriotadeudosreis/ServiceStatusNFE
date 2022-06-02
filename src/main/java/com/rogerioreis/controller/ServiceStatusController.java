@@ -12,6 +12,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 
+@CrossOrigin("*")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "/api/service-status")
@@ -49,16 +51,13 @@ public class ServiceStatusController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Page<ServiceStatusDto>> consultar(
             @RequestParam(required = false) String authorizing,
-            @PageableDefault(sort = "authorizing", direction = Sort.Direction.ASC, page = 0, size = 1000) Pageable paginacao) {
+            @PageableDefault(sort = "authorizing",  direction = Sort.Direction.ASC, page = 0, size = 1000) Pageable paginacao) {
         if (authorizing == null) {
-            Page<ServiceStatus> lista = service.listar(paginacao);
+            Page<ServiceStatus> lista = service.consultar(paginacao);
             return ResponseEntity.ok(lista.map(ServiceStatusDto::new));
         } else {
             Page<ServiceStatus> lista = service.consultarPorUf(authorizing, paginacao);
             return ResponseEntity.ok(lista.map(ServiceStatusDto::new));
         }
-
-
     }
-
 }

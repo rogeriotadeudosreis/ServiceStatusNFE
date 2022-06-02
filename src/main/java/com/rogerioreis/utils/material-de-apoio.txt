@@ -19,9 +19,9 @@ Desenvolver aplicação utilizando Spring Boot e OpenJDK 14.
 
 4- Retornar por rest o status atual do serviço filtrando por estado. >>> ok
 
-5- Retornar por rest os status dos serviços por estado filtrando por data.
+5- Retornar por rest os status dos serviços por estado filtrando por data. ??
 
-6- Retornar por rest qual estado teve mais indisponibilidade de serviço.
+6- Retornar por rest qual estado teve mais indisponibilidade de serviço. ??
 
 
 
